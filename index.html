@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>To-Do-List</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h1> To-Do-List </h1>
+  <hr>
+  <br>
+  
+  <div id="divtarefa">
+
+    <div id="novaTarefa">
+      <h3>Nova Tarefa:</h3> 
+    
+       <form> <!-- O form coletará os dados necessários para a função que o botão chama. -->
+        <label for="nomeTarefa">Nome:</label>
+        <input type="text" id="nomeTarefa" placeholder="Nome da tarefa..."> <br>
+
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" cols="25" rows="2" placeholder="Descrição..."></textarea>
+        
+        <label for="data">Data de conclusão:</label>
+        <input type="date" id="data"> <br>
+  
+        <label for="grau">Grau de Importância:</label>
+        <select id="grau">
+          <option value="Nenhum">Nenhum</option>
+          <option value="Importante">Importante</option>
+          <option value="Muito Importante">Muito Importante</option>
+          <option value="Urgente">Urgente</option>
+        </select>
+      </form>
+      <br>
+  
+      <button id="buttonAdd" onclick="adicionar()">Adicionar</button> <!-- O botão chama a função que fará o site funcionar. -->
+    </div>
+
+    <div id="removerTarefa">
+      <h3>Remover Tarefa:</h3>
+    
+      <form> <!-- O form coletará os dados necessários para a função que o botão chama. -->
+        <label for="remover">Nome:</label>
+        <input type="text" id="remover" placeholder="Nome da tarefa...">
+      </form>
+  
+      <br> 
+      
+      <button id="buttonRemove" onclick="remover(document.getElementById('remover').value.toUpperCase())">Remover</button> <!-- O botão chama a função que fará o site funcionar. -->
+    </div>
+
+    <div id="editarTarefa">
+      <h3>Editar Tarefa:</h3>
+
+      <form> <!-- O form coletará os dados necessários para a função que o botão chama. -->
+        <label for="editarNome">Nome:</label>
+        <input type="text" id="editarNome" placeholder="Nome da tarefa editável..."> <br>
+
+        <label for="editarDescricao">Descrição:</label>
+        <textarea id="editarDescricao" cols="25" rows="2" placeholder="Descrição..."></textarea>
+        
+        <label for="editarData">Data de conclusão:</label>
+        <input type="date" id="editarData"> <br>
+  
+        <label for="editarGrau">Grau de Importância:</label>
+        <select id="editarGrau">
+          <option value="Nenhum">Nenhum</option>
+          <option value="Importante">Importante</option>
+          <option value="Muito Importante">Muito Importante</option>
+          <option value="Urgente">Urgente</option>
+        </select>
+      </form>
+
+      <br>
+
+      <button id="buttonEdita" onclick="editarTarefa()">Editar</button> <!-- O botão chama a função que fará o site funcionar. -->
+    </div>
+
+    <div id="marcarTarefa">
+      <h3>Marcar como Concluída:</h3>
+
+      <form> <!-- O form coletará os dados necessários para a função que o botão chama. --> 
+        <label for="nomeConcluida">Nome da tarefa concluída:</label>
+        <input type="text" id="nomeConcluida" placeholder="Nome da tarefa concluída..."> <br>
+  
+        <label for="dataConclusao">Data em que foi concluída:</label>
+        <input type="date" id="dataConclusao"> <br>
+      </form>
+
+      <br>
+  
+      <button id="buttonConclui" onclick="concluida(document.getElementById('nomeConcluida').value.toUpperCase())">Marcar</button> <!-- O botão chama a função que fará o site funcionar. -->
+    </div>
+    
+  </div>
+  <br />
+  
+  <div id="Tarefas">
+    <h2> - Tarefas Pendentes:</h2>
+    <ol id="tarefasPendentes">
+      <!-- Aqui serão adicionados os itens da lista de tarefas concluídas -->
+    </ol>
+
+    <h2> - Tarefas Concluídas:</h2>
+    <ul id="tarefasConcluidas">
+      <!-- Aqui serão adicionados os itens que foram retirados da lista de Tarefas Pendentes, que agora foram marcados como concluído. -->
+    </ul>
+  </div>
+
+  <!-- <script type="text/javascript" src="/script.js"></script> -->
+
+  <script src="script.js" type="module"></script>
+</body>
+
+</html>

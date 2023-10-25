@@ -1,0 +1,61 @@
+html /*Código que já vem no arquivo do Replit.*/ {
+    height: 100%;
+    width: 100%;
+  }
+  
+  body /*Definindo a cor de fundo e a fonte que será usada no site*/ {
+    background-color: #ced2db;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  h1,
+  h2 /*Defindindo a cor do Título 1 e 2*/ { 
+    color: #0c1e42;
+  }
+  
+  h1 /*Definido a posiçãodo Título 1*/{
+    text-align: center;
+  }
+  
+  h3,
+  label /*Defindindo a cor do Título 3 e do label*/ {
+    color: #1f3b72;
+  }
+  
+  button /*Estilizando os botões que aparecem no site.*/ {
+    width: 150px;
+    background-color:#5f7cb4;
+    border-radius: 25px;
+    border: none;
+  }
+  
+  ul /*Retirando as bolinhas que aparecem nos itens de uma linha não ordenada e definindo sua margem e padding.*/ {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #divtarefa /*Definindo os atributos da div maior onde ficam localizadas as quatro divs dos quatro forms quatro botões.*/ {
+  
+    display: flex; /* Largura e altura da div é flexível. */
+  
+    flex-wrap: wrap; /* Quebra a disposição horizontal dos elemetos dessa div se não houver espaço. */
+  }
+  
+  #novaTarefa,
+  #removerTarefa,
+  #editarTarefa,
+  #marcarTarefa /*Características/atributos gerais das divs*/ {
+    width: 240px;
+  }
+  
+  
+  input,
+  textarea,
+  select /*Definindo a largura e as bordas dos seletores*/ {
+    width: 200px;
+    border-radius: 10px;
+    background-color: #98abd1;
+    border: none;
+    outline: none;
+  }
