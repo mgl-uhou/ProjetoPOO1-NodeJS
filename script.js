@@ -39,6 +39,7 @@ const adicionar = () => { // Arrow Fuction responsável por adicionar tarefas é
   // As duas linhas abaixo limpam o campo de input e o textarea
   document.getElementById('nomeTarefa').value = '';
   document.getElementById('descricao').value = '';
+  document.getElementById('data').value = '';
 
   }else
     console.log('Defina um nome para a tarefa.')
@@ -101,7 +102,8 @@ const concluida = (x) => {
       novoItem.innerHTML = document.getElementById(x).innerHTML + `<br /> <strong>Foi concluida em:</strong> ${document.getElementById('dataConclusao').value}`;
       listaConcluidos.appendChild(novoItem); // Aqui as informações que aparecerão no site são organizadas.
 
-      document.getElementById('nomeConcluida').value = ''; // Limpa o campo de input
+      document.getElementById('nomeConcluida').value = '';
+      document.getElementById(`dataConclusao`).value = ''; // Limpa o campo de input
 
       remover(x) // Chama a função remover() para retirar a tarefa da lista de tarefas pendentes do site, já que agora ela faz parte da lista de tarefas concluídas.
     }else
