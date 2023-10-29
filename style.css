@@ -21,6 +21,7 @@ button /*Estilizando os botões que aparecem no site.*/ {
   border-radius: 25px;
   border: none;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 button:hover{
