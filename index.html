@@ -12,10 +12,19 @@
   <h1> To-Do-List </h1>
   <hr>
   <br>
-  
-  <div id="divtarefa">
 
-    <div id="novaTarefa">
+  <div id="botoes">
+
+    <button onclick="mostrarNova()">Nova Tarefa</button>
+    <button onclick="mostrarRemover()">Remover Tarefa</button>
+    <button onclick="mostrarEditar()">Editar Tarefa</button>
+    <button onclick="mostrarConcluida()">Marcar com Concluída</button>
+
+  </div>
+  
+  <div id="gerenciaTarefas" >
+
+    <div id="novaTarefa" class="tarefa">
       <h3>Nova Tarefa:</h3> 
     
        <form> <!-- O form coletará os dados necessários para a função que o botão chama. -->
@@ -41,7 +50,7 @@
       <button id="buttonAdd" onclick="adicionar()">Adicionar</button> <!-- O botão chama a função que fará o site funcionar. -->
     </div>
 
-    <div id="removerTarefa">
+    <div id="removerTarefa" class="tarefa">
       <h3>Remover Tarefa:</h3>
     
       <form> <!-- O form coletará os dados necessários para a função que o botão chama. -->
@@ -54,7 +63,7 @@
       <button id="buttonRemove" onclick="remover(document.getElementById('remover').value.toUpperCase())">Remover</button> <!-- O botão chama a função que fará o site funcionar. -->
     </div>
 
-    <div id="editarTarefa">
+    <div id="editarTarefa" class="tarefa">
       <h3>Editar Tarefa:</h3>
 
       <form> <!-- O form coletará os dados necessários para a função que o botão chama. -->
@@ -81,7 +90,7 @@
       <button id="buttonEdita" onclick="editarTarefa()">Editar</button> <!-- O botão chama a função que fará o site funcionar. -->
     </div>
 
-    <div id="marcarTarefa">
+    <div id="marcarTarefa" class="tarefa">
       <h3>Marcar como Concluída:</h3>
 
       <form> <!-- O form coletará os dados necessários para a função que o botão chama. --> 
@@ -100,16 +109,23 @@
   </div>
   <br />
   
-  <div id="Tarefas">
-    <h2> - Tarefas Pendentes:</h2>
-    <ol id="tarefasPendentes">
-      <!-- Aqui serão adicionados os itens da lista de tarefas concluídas -->
-    </ol>
+  <div id="campoTarefas">
+    
+    <div class="listaTarefas">
+      <h2> - Tarefas Pendentes:</h2>
 
-    <h2> - Tarefas Concluídas:</h2>
-    <ul id="tarefasConcluidas">
-      <!-- Aqui serão adicionados os itens que foram retirados da lista de Tarefas Pendentes, que agora foram marcados como concluído. -->
-    </ul>
+      <ol id="tarefasPendentes">
+        <!-- Aqui serão adicionados os itens da lista de tarefas concluídas -->
+      </ol>
+    </div>
+
+    <div id="listaTarefas">
+      <h2> - Tarefas Concluídas:</h2>
+
+      <ul id="tarefasConcluidas">
+        <!-- Aqui serão adicionados os itens que foram retirados da lista de Tarefas Pendentes, que agora foram marcados como concluído. -->
+      </ul>
+    </div>
   </div>
 
   <!-- <script type="text/javascript" src="/script.js"></script> -->
