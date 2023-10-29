@@ -89,7 +89,9 @@ const concluida = (x) => {
       novoItem.innerHTML = `A tarefa <strong>${x.toUpperCase()}</strong> foi concluida em <strong>${document.getElementById('dataConclusao').value}</strong>.`;
       listaConcluidos.appendChild(novoItem); // Aqui as informações que aparecerão no site são organizadas.
 
-      document.getElementById('nomeConcluida').value = ''; // Limpa o campo de input
+      /* Os campos de input são limpos */
+      document.getElementById('nomeConcluida').value = '';
+      document.getElementById('dataConclusao').value = '';
 
       remover(x) // Chama a função remover() para retirar a tarefa da lista de tarefas pendentes do site, já que agora ela faz parte da lista de tarefas concluídas.
     }else
