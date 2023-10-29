@@ -68,8 +68,9 @@ input,
 textarea,
 select /*Definindo a largura e as bordas dos seletores*/ {
   width: 200px;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: #98abd1;
   border: none;
   outline: none;
+  padding: 5px;
 }

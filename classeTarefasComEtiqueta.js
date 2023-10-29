@@ -1,4 +1,4 @@
-import tarefa from "./tarefas.js";
+import tarefa from "./classeTarefa.js";
 
 class tarefasComEtiqueta extends tarefa {
   constructor(etiqueta){

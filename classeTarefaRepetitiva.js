@@ -1,4 +1,4 @@
-import tarefa from "./tarefas.js";
+import tarefa from "./classeTarefa.js";
 //crie uma subclasse de tarefas
 //crie uma lista de tarefas repetitivas
 class TarefaRepetitiva extends Tarefa{
