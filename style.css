@@ -77,7 +77,7 @@ select /*Definindo a largura e as bordas dos seletores*/ {
 }
 
 /* Celular */
-@media (max-width: 420px) {
+@media (max-width: 450px) {
   
   #campoTarefas{
     display: flex;
