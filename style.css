@@ -75,3 +75,12 @@ select /*Definindo a largura e as bordas dos seletores*/ {
   outline: none;
   padding: 5px;
 }
+
+@media (max-width: 420px) {
+  
+  #campoTarefas{
+    display: flex;
+    flex-direction: column;
+  }
+
+}
