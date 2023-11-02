@@ -1,17 +1,30 @@
-import { mostrarNova, mostrarRemover, mostrarEditar, mostrarConcluida } from "./mostrar.js";
-import adicionar from "./funcAdicionar.js";
+import { mostrarNovaComum, mostrarNovaComEtiqueta, mostrarNovaPrioritaria, mostrarNovaRepetitiva, mostrarRemover, mostrarEditarComum, mostrarEditarComEtiqueta, mostrarEditarPrioritaria, mostrarEditarRepetitiva, mostrarConcluida } from "./mostrar.js";
+import { adicionarComum, adicionarComEtiqueta, adicionarPrioritaria, adicionarRepetitiva } from "./funcAdicionar.js";
 import remover from "./funcRemover.js";
-import editarTarefa from "./funcEditarTarefa.js";
+import editarTarefaComum from "./funcEditar.js";
 import concluida from "./funcConcluida.js";
 
 /* window.[nome da função] serve para trazê-la para o escopo global do código, tornando possível usá-la pelo index.html */
 
-window.adicionar = adicionar; 
+window.adicionarComum = adicionarComum; 
+window.adicionarComEtiqueta = adicionarComEtiqueta; 
+window.adicionarPrioritaria = adicionarPrioritaria; 
+window.adicionarRepetitiva = adicionarRepetitiva; 
+
 window.remover = remover; 
-window.editarTarefa = editarTarefa; 
+window.editarTarefaComum = editarTarefaComum; 
 window.concluida = concluida; 
 
-window.mostrarNova = mostrarNova;
+window.mostrarNovaComum = mostrarNovaComum;
+window.mostrarNovaComEtiqueta = mostrarNovaComEtiqueta;
+window.mostrarNovaPrioritaria = mostrarNovaPrioritaria;
+window.mostrarNovaRepetitiva = mostrarNovaRepetitiva; 
+
 window.mostrarRemover = mostrarRemover;
-window.mostrarEditar = mostrarEditar;
+
+window.mostrarEditarComum = mostrarEditarComum;
+window.mostrarEditarComEtiqueta = mostrarEditarComEtiqueta;
+window.mostrarEditarPrioritaria = mostrarEditarPrioritaria;
+window.mostrarEditarRepetitiva = mostrarEditarRepetitiva;
+
 window.mostrarConcluida = mostrarConcluida;

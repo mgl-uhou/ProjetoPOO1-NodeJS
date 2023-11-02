@@ -24,6 +24,10 @@ button /*Estilizando os botões que aparecem no site.*/ {
   transition: 0.3s;
 }
 
+#botoes button{
+  height: 37px;
+}
+
 button:hover{
   background-color: #98ABD1;
 }

@@ -5,7 +5,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>To-Do-List</title>
+
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="styleDropdown.css">
 </head>
 
 <body>
@@ -15,17 +17,73 @@
 
   <div id="botoes">
 
-    <button onclick="mostrarNova()">Nova Tarefa</button>
+    <div class="dropdown">
+
+      <button>Nova Tarefa</button>
+
+      <div class="dropdown-menu">
+        <ul>
+
+          <li>
+            <button onclick="mostrarNovaComum()">Tarefa Comum</button>
+          </li>
+
+          <li>
+            <button onclick="mostrarNovaComEtiqueta()">Tarefa com Etiqueta</button>
+          </li>
+
+          <li>
+            <button onclick="mostrarNovaPrioritaria()">Tarefa Prioritária</button>
+          </li>
+
+          <li>
+            <button onclick="mostrarNovaRepetitiva()">Tarefa Repetitiva</button>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+
     <button onclick="mostrarRemover()">Remover Tarefa</button>
-    <button onclick="mostrarEditar()">Editar Tarefa</button>
+
+    <div class="dropdown">
+      
+      <button>Editar Tarefa</button>
+  
+        <div class="dropdown-menu">
+          <ul>
+  
+            <li>
+              <button onclick="mostrarEditarComum()">Tarefa Comum</button>
+            </li>
+  
+            <li>
+              <button onclick="mostrarEditarComEtiqueta()">Tarefa com Etiqueta</button>
+            </li>
+  
+            <li>
+              <button onclick="mostrarEditarPrioritaria()">Tarefa Prioritária</button>
+            </li>
+  
+            <li>
+              <button onclick="mostrarEditarRepetitiva()">Tarefa Repetitiva</button>
+            </li>
+  
+          </ul>
+        </div>
+  
+      </div>
+
     <button onclick="mostrarConcluida()">Marcar como Concluída</button>
+    
 
   </div>
   
   <div id="gerenciaTarefas" >
 
     <div id="novaTarefa" class="tarefa">
-      <h3>Nova Tarefa:</h3> 
+      <h3>Nova Tarefa Comum:</h3> 
     
        <form> <!-- O form coletará os dados necessários para a função que o botão chama. -->
         <label for="nomeTarefa">Nome:</label>
@@ -33,21 +91,79 @@
 
         <label for="descricao">Descrição:</label>
         <textarea id="descricao" cols="25" rows="2" placeholder="Descrição..."></textarea>
-        
-        <label for="data">Data de conclusão:</label>
-        <input type="date" id="data"> <br>
+      </form>
+      <br>
   
-        <label for="grau">Grau de Importância:</label>
-        <select id="grau">
-          <option value="Nenhum">Nenhum</option>
-          <option value="Importante">Importante</option>
-          <option value="Muito Importante">Muito Importante</option>
-          <option value="Urgente">Urgente</option>
+      <button class="buttonAdd" onclick="adicionarComum()">Adicionar</button> <!-- O botão chama a função que fará o site funcionar. -->
+    </div>
+
+    <div id="novaTarefaComEtiqueta" class="tarefa">
+      <h3>Nova Tarefa com Etiqueta:</h3> 
+    
+       <form> <!-- O form coletará os dados necessários para a função que o botão chama. -->
+        <label for="nomeTarefaComEtiqueta">Nome:</label>
+        <input type="text" id="nomeTarefaComEtiqueta" placeholder="Nome da tarefa..."> <br>
+
+        <label for="descricaoNovaTarefaComEtiqueta">Descrição:</label>
+        <textarea id="descricaoNovaTarefaComEtiqueta" cols="25" rows="2" placeholder="Descrição..."></textarea>
+        
+        <label for="etiqueta">Etiqueta da Tarefa:</label>
+        <input type="text" id="etiqueta" value="#"> <br>
+  
+      </form>
+      <br>
+  
+      <button class="buttonAdd" onclick="adicionarComEtiqueta()">Adicionar</button> <!-- O botão chama a função que fará o site funcionar. -->
+    </div>
+
+    <div id="novaTarefaPrioritária" class="tarefa">
+      <h3>Nova Tarefa Prioritária:</h3> 
+    
+       <form> <!-- O form coletará os dados necessários para a função que o botão chama. -->
+        <label for="nomeTarefaPrioritaria">Nome:</label>
+        <input type="text" id="nomeTarefaPrioritaria" placeholder="Nome da tarefa..."> <br>
+
+        <label for="descricaoPrioritaria">Descrição:</label>
+        <textarea id="descricaoPrioritaria" cols="25" rows="2" placeholder="Descrição..."></textarea>
+        
+        <label for="dataLimite">Data limite:</label>
+        <input type="date" id="dataLimite"> <br>
+  
+        <label for="prioridade">Nível de Prioridade:</label>
+        <select id="prioridade">
+          <option value="Alta">Alta</option>
+          <option value="Média">Média</option>
+          <option value="Baixa">Baixa</option>
         </select>
       </form>
       <br>
   
-      <button id="buttonAdd" onclick="adicionar()">Adicionar</button> <!-- O botão chama a função que fará o site funcionar. -->
+      <button class="buttonAdd" onclick="adicionarPrioritaria()">Adicionar</button> <!-- O botão chama a função que fará o site funcionar. -->
+    </div>
+
+    <div id="novaTarefaRepetitiva" class="tarefa">
+      <h3>Nova Tarefa Repetitiva:</h3> 
+    
+       <form> <!-- O form coletará os dados necessários para a função que o botão chama. -->
+        <label for="nomeTarefaRepetitiva">Nome:</label>
+        <input type="text" id="nomeTarefaRepetitiva" placeholder="Nome da tarefa..."> <br>
+
+        <label for="descricaoRepetitiva">Descrição:</label>
+        <textarea id="descricaoRepetitiva" cols="25" rows="2" placeholder="Descrição..."></textarea>
+        
+        <label for="dataInicio">Data de início:</label>
+        <input type="date" id="dataInicio"> <br>
+  
+        <label for="frequencia">Frequência:</label>
+        <select id="frequencia">
+          <option value="Diária">Diária</option>
+          <option value="Semanal">Semanal</option>
+          <option value="Mensal">Mensal</option>
+        </select>
+      </form>
+      <br>
+  
+      <button class="buttonAdd" onclick="adicionarRepetitiva()">Adicionar</button> <!-- O botão chama a função que fará o site funcionar. -->
     </div>
 
     <div id="removerTarefa" class="tarefa">
@@ -63,8 +179,8 @@
       <button id="buttonRemove" onclick="remover(document.getElementById('remover').value.toUpperCase())">Remover</button> <!-- O botão chama a função que fará o site funcionar. -->
     </div>
 
-    <div id="editarTarefa" class="tarefa">
-      <h3>Editar Tarefa:</h3>
+    <div id="editarTarefaComum" class="tarefa">
+      <h3>Editar Tarefa Comum:</h3>
 
       <form> <!-- O form coletará os dados necessários para a função que o botão chama. -->
         <label for="editarNome">Nome:</label>
@@ -74,20 +190,82 @@
         <textarea id="editarDescricao" cols="25" rows="2" placeholder="Descrição..."></textarea>
         
         <label for="editarData">Data de conclusão:</label>
-        <input type="date" id="editarData"> <br>
-  
-        <label for="editarGrau">Grau de Importância:</label>
-        <select id="editarGrau">
-          <option value="Nenhum">Nenhum</option>
-          <option value="Importante">Importante</option>
-          <option value="Muito Importante">Muito Importante</option>
-          <option value="Urgente">Urgente</option>
+        <input type="date" id="editarData">
         </select>
       </form>
 
       <br>
 
-      <button id="buttonEdita" onclick="editarTarefa()">Editar</button> <!-- O botão chama a função que fará o site funcionar. -->
+      <button class="buttonEdita" onclick="editarTarefa()">Editar</button> <!-- O botão chama a função que fará o site funcionar. -->
+    </div>
+
+    <div id="editarTarefaComEtiqueta" class="tarefa">
+      <h3>Editar Tarefa com Etiqueta:</h3> 
+    
+       <form> <!-- O form coletará os dados necessários para a função que o botão chama. -->
+        <label for="nomeEditarTarefaComEtiqueta">Nome:</label>
+        <input type="text" id="nomeEditarTarefaComEtiqueta" placeholder="Nome da tarefa..."> <br>
+
+        <label for="descricaoEditarTarefaComEtiqueta">Descrição:</label>
+        <textarea id="descricaoEditarTarefaComEtiqueta" cols="25" rows="2" placeholder="Descrição..."></textarea>
+        
+        <label for="novaEtiqueta">Etiqueta da Tarefa:</label>
+        <input type="text" id="novaEtiqueta" value="#"> <br>
+  
+      </form>
+      <br>
+  
+      <button class="buttonEdita" onclick="editarTarefa()">Editar</button> <!-- O botão chama a função que fará o site funcionar. -->
+    </div>
+
+    <div id="editarTarefaPrioritaria" class="tarefa">
+      <h3>Editar Tarefa Prioritária:</h3> 
+    
+       <form> <!-- O form coletará os dados necessários para a função que o botão chama. -->
+        <label for="nomeEditarTarefaPrioritaria">Nome:</label>
+        <input type="text" id="nomeEditarTarefaPrioritaria" placeholder="Nome da tarefa..."> <br>
+
+        <label for="descricaoEditarTarefaPrioritaria">Descrição:</label>
+        <textarea id="descricaoEditarTarefaPrioritaria" cols="25" rows="2" placeholder="Descrição..."></textarea>
+        
+        <label for="novaDataLimite">Data limite:</label>
+        <input type="date" id="novaDataLimite"> <br>
+  
+        <label for="novaPrioridade">Nível de Prioridade:</label>
+        <select id="novaPrioridade">
+          <option value="Alta">Alta</option>
+          <option value="Média">Média</option>
+          <option value="Baixa">Baixa</option>
+        </select>
+      </form>
+      <br>
+  
+      <button class="buttonEdita" onclick="editarTarefa()">Editar</button> <!-- O botão chama a função que fará o site funcionar. -->
+    </div>
+
+    <div id="editarTarefaRepetitiva" class="tarefa">
+      <h3>Editar Tarefa Repetitiva:</h3> 
+    
+       <form> <!-- O form coletará os dados necessários para a função que o botão chama. -->
+        <label for="nomeEditarTarefaRepetitiva">Nome:</label>
+        <input type="text" id="nomeEditarTarefaRepetitiva" placeholder="Nome da tarefa..."> <br>
+
+        <label for="descricaoEditarTarefaRepetitiva">Descrição:</label>
+        <textarea id="descricaoEditarTarefaRepetitiva" cols="25" rows="2" placeholder="Descrição..."></textarea>
+        
+        <label for="novaDataInicio">Data de início:</label>
+        <input type="date" id="novaDataInicio"> <br>
+  
+        <label for="novoGrau">Frequência:</label>
+        <select id="novoGrau">
+          <option value="Diária">Diária</option>
+          <option value="Semanal">Semanal</option>
+          <option value="Mensal">Mensal</option>
+        </select>
+      </form>
+      <br>
+  
+      <button class="buttonEdita" onclick="editarTarefa()">Editar</button> <!-- O botão chama a função que fará o site funcionar. -->
     </div>
 
     <div id="marcarTarefa" class="tarefa">

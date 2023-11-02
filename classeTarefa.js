@@ -3,28 +3,22 @@ class tarefa{ // Aqui a classe que tem as propriedades dos objetos e o método �
     static listaDeConcluidos = [];
     constructor(){
         this._nome = '';
-        this._data = '';
-        this._grau = '';
         this._descricao = '';
         tarefa.listaDeTarefas.push(this);
 
     }
 
-    setAlterar(data, grau, des) /** Método que edita o valor das propriedades da terefa */ {
-        this._data = data;
-        this._grau = grau;
+    setAlterar(des) /** Método que edita o valor das propriedades da terefa */ {
         this._descricao = des;
     }
 
-    setInformation(nome, data, grau, descricao){
+    setInformation(nome, descricao){
         this._nome = nome;
-        this._data = data;
-        this._grau = grau;
         this._descricao = descricao;
     }
 
     getInformation(){
-        return `<strong>Tarefa:</strong> ${this._nome.toUpperCase()}. <strong>Dia a ser concluída:</strong> ${this._data}. <strong>Importância:</strong> ${this._grau.toUpperCase()} <br /> <strong>Descrição:</strong> ${this._descricao}`; // Aqui as informações que aparecerão no site são organizadas.
+        return `<strong>Tarefa:</strong> ${this._nome.toUpperCase()}. <br /> <strong>Descrição:</strong> ${this._descricao}`; // Aqui as informações que aparecerão no site são organizadas.
     }
 
     getNome(){

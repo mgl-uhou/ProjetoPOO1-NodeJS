@@ -1,6 +1,6 @@
 import tarefa from "./classeTarefa.js";
 
-const editarTarefa = () => { // Arrow Function que edita a tarefa escolhida
+const editarTarefaComum = () => { // Arrow Function que edita a tarefa escolhida
     const x = document.getElementById('editarNome').value.toUpperCase(); // Refenrenciando a tarefa que será editada.
   
     for(let i = 0; i < tarefa.listaDeTarefas.length; i++) /** Procura o elemento que será editado  */ {
@@ -28,4 +28,4 @@ const editarTarefa = () => { // Arrow Function que edita a tarefa escolhida
     document.getElementById('editarData').value = '';
 } 
 
-export default editarTarefa;
+export default editarTarefaComum;
