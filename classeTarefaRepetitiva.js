@@ -20,7 +20,7 @@ class tarefaRepetitiva extends tarefa{
   }
 
   getInformation(){
-    return `<strong>Tarefa:</strong> ${this._nome.toUpperCase()}. <strong>Frequência:</strong> ${this._frequencia}. <strong>Data de Início:</strong> ${this._dataInicio}. <br /> <strong>Descrição:</strong> ${this._descricao}`; // Aqui as informações que aparecerão no site são organizadas.
+    return `<strong>Tipo da Tarefa:</strong> Tarefa Repetitiva. <br/> <strong>Tarefa:</strong> ${this._nome.toUpperCase()}. <strong>Frequência:</strong> ${this._frequencia}. <strong>Data de Início:</strong> ${this._dataInicio}. <br /> <strong>Descrição:</strong> ${this._descricao}`; // Aqui as informações que aparecerão no site são organizadas.
   }
 
 }

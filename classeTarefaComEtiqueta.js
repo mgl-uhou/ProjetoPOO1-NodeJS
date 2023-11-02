@@ -7,7 +7,7 @@ class tarefasComEtiqueta extends tarefa {
   }
 
   setAlterar(descricao, etiqueta){
-    super.alterar(descricao);
+    super.setAlterar(descricao);
     this._etiqueta = etiqueta;
   }
 
@@ -17,11 +17,11 @@ class tarefasComEtiqueta extends tarefa {
   }
 
   getInformation(){
-    return `<strong>Tarefa:</strong> ${this._nome.toUpperCase()}. <strong>Etiqueta:</strong> ${this._etiqueta}. <br /> <strong>Descrição:</strong> ${this._descricao}`;
+    return `<strong>Tipo da Tarefa:</strong> Tarefa com Etiqueta. <br/>  <strong>Tarefa:</strong> ${this._nome.toUpperCase()}. <strong>Etiqueta:</strong> ${this._etiqueta}. <br/> <strong>Descrição:</strong> ${this._descricao}`;
   }
 
   getConcluida(){
-    return `A tarefa <strong>${this._nome.toUpperCase()}</strong> foi concluida em <strong>${document.getElementById('dataConclusao').value}</strong>. <br /> <strong>${etiqueta}</strong>`;
+    return `A tarefa <strong>${this._nome.toUpperCase()}</strong> foi concluida em <strong>${document.getElementById('dataConclusao').value}</strong>. <br /> <strong>${this._etiqueta}</strong>`;
 }
 }
 

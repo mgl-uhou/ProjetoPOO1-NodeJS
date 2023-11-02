@@ -188,15 +188,12 @@
 
         <label for="editarDescricao">Descrição:</label>
         <textarea id="editarDescricao" cols="25" rows="2" placeholder="Descrição..."></textarea>
-        
-        <label for="editarData">Data de conclusão:</label>
-        <input type="date" id="editarData">
-        </select>
+
       </form>
 
       <br>
 
-      <button class="buttonEdita" onclick="editarTarefa()">Editar</button> <!-- O botão chama a função que fará o site funcionar. -->
+      <button class="buttonEdita" onclick="editarTarefaComum()">Editar</button> <!-- O botão chama a função que fará o site funcionar. -->
     </div>
 
     <div id="editarTarefaComEtiqueta" class="tarefa">
@@ -215,7 +212,7 @@
       </form>
       <br>
   
-      <button class="buttonEdita" onclick="editarTarefa()">Editar</button> <!-- O botão chama a função que fará o site funcionar. -->
+      <button class="buttonEdita" onclick="editarTarefaComEtiqueta()">Editar</button> <!-- O botão chama a função que fará o site funcionar. -->
     </div>
 
     <div id="editarTarefaPrioritaria" class="tarefa">
@@ -240,7 +237,7 @@
       </form>
       <br>
   
-      <button class="buttonEdita" onclick="editarTarefa()">Editar</button> <!-- O botão chama a função que fará o site funcionar. -->
+      <button class="buttonEdita" onclick="editarTarefaPrioritaria()">Editar</button> <!-- O botão chama a função que fará o site funcionar. -->
     </div>
 
     <div id="editarTarefaRepetitiva" class="tarefa">
@@ -256,8 +253,8 @@
         <label for="novaDataInicio">Data de início:</label>
         <input type="date" id="novaDataInicio"> <br>
   
-        <label for="novoGrau">Frequência:</label>
-        <select id="novoGrau">
+        <label for="novaFrequencia">Frequência:</label>
+        <select id="novaFrequencia">
           <option value="Diária">Diária</option>
           <option value="Semanal">Semanal</option>
           <option value="Mensal">Mensal</option>
@@ -265,7 +262,7 @@
       </form>
       <br>
   
-      <button class="buttonEdita" onclick="editarTarefa()">Editar</button> <!-- O botão chama a função que fará o site funcionar. -->
+      <button class="buttonEdita" onclick="editarTarefaRepetitiva()">Editar</button> <!-- O botão chama a função que fará o site funcionar. -->
     </div>
 
     <div id="marcarTarefa" class="tarefa">

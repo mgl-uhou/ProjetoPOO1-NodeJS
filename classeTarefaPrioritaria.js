@@ -20,7 +20,7 @@ class tarefasPrioridade extends tarefa {
   }
 
   getInformation(){
-    return `<strong>Tarefa:</strong> ${this._nome}. <strong>Prioridade:</strong> ${this._prioridade}. <strong>Data Limite:</strong> ${this._dataLimite} <br /> <strong>Descrição:</strong> ${this._descricao}`; // Aqui as informações que aparecerão no site são organizadas.
+    return `<strong>Tipo da Tarefa:</strong> Tarefa Prioritária. <br/> <strong>Tarefa:</strong> ${this._nome}. <strong>Prioridade:</strong> ${this._prioridade}. <strong>Data Limite:</strong> ${this._dataLimite} <br /> <strong>Descrição:</strong> ${this._descricao}`; // Aqui as informações que aparecerão no site são organizadas.
   }
 }
 
