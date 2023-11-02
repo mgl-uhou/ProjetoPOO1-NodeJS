@@ -17,7 +17,7 @@ class tarefasComEtiqueta extends tarefa {
   }
 
   getInformation(){
-    return `<strong>Tarefa:</strong> ${this._nome.toUpperCase()}. <strong>Etiqueta:</strong> ${etiqueta}. <br /> <strong>Descrição:</strong> ${this._descricao}`;
+    return `<strong>Tarefa:</strong> ${this._nome.toUpperCase()}. <strong>Etiqueta:</strong> ${this._etiqueta}. <br /> <strong>Descrição:</strong> ${this._descricao}`;
   }
 
   getConcluida(){

@@ -54,7 +54,11 @@ const adicionarComEtiqueta = () => {
 
     let obj = new tarefasComEtiqueta() // O objeto é criado e recebe as propriedades da classe.
 
-    obj.setInformation(document.getElementById('nomeTarefaComEtiqueta').value.toUpperCase(), document.getElementById('descricaoNovaTarefaComEtiqueta').value, document.getElementById("etiqueta").value);
+    obj.setInformation(
+      document.getElementById('nomeTarefaComEtiqueta').value.toUpperCase(), 
+      document.getElementById('descricaoNovaTarefaComEtiqueta').value, 
+      document.getElementById("etiqueta").value
+      );
 
     add(obj);
   }
@@ -71,7 +75,8 @@ const adicionarPrioritaria = () => {
 
     obj.setInformation(
       document.getElementById('nomeTarefaPrioritaria').value.toUpperCase(),
-      document.getElementById('descricaoPrioritaria').value, document.getElementById("prioridade").value, 
+      document.getElementById('descricaoPrioritaria').value, 
+      document.getElementById("prioridade").value, 
       document.getElementById("dataLimite").value
       );
 
