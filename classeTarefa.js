@@ -26,7 +26,7 @@ class tarefa{ // Aqui a classe que tem as propriedades dos objetos e o método �
     }
 
     getConcluida(){
-        return `A tarefa <strong>${this._nome.toUpperCase()}</strong> foi concluida em <strong>${document.getElementById('dataConclusao').value}</strong>.`;
+        return `A tarefa <strong>${this._nome.toUpperCase()}</strong> foi concluída em <strong>${document.getElementById('dataConclusao').value}</strong>.`;
     }
 
     static removerDaLista(elemento){
