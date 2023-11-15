@@ -1,11 +1,7 @@
 class tarefa{ // Aqui a classe que tem as propriedades dos objetos e o método é criada.
-    static listaDeTarefas = [];
-    static listaDeConcluidos = [];
     constructor(){
         this._nome = '';
         this._descricao = '';
-        tarefa.listaDeTarefas.push(this);
-
     }
 
     setAlterar(des) /** Método que edita o valor das propriedades da terefa */ {
@@ -28,21 +24,6 @@ class tarefa{ // Aqui a classe que tem as propriedades dos objetos e o método �
     getConcluida(){
         return `A tarefa <strong>${this._nome.toUpperCase()}</strong> foi concluída em <strong>${document.getElementById('dataConclusao').value}</strong>.`;
     }
-
-    static removerDaLista(elemento){
-        let i = 0
-        for(let indice of tarefa.listaDeTarefas){
-            if( indice.getNome() == elemento ){
-                tarefa.listaDeTarefas.splice(i, 1);
-            }else
-                i++
-        }
-    }
-
-    concluido(){
-        tarefa.listaDeConcluidos.push(this);
-    }
 }
 
 export default tarefa;
-// export {tarefa};

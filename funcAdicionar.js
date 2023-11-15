@@ -3,10 +3,14 @@ import tarefasComEtiqueta from "./classeTarefaComEtiqueta.js";
 import tarefasPrioridade from "./classeTarefaPrioritaria.js";
 import tarefaRepetitiva from "./classeTarefaRepetitiva.js";
 
+import { tarefasPendentes } from "./classeLista.js";
+
 const listaPendentes = document.getElementById('tarefasPendentes'); // Aqui uma variável está sendo criada e a ela está sendo atribuído a lista de tarefas pendentes que existe no HTML, para que possa ser manipulada pela function adicionar().
 const add = (obj) => {
-  console.log('Tarefas Pendentes:');
-  console.table(tarefa.listaDeTarefas); // A lista com as tarefas é mostrada no console.
+
+  tarefasPendentes.setAdicionar(obj);
+  console.log("Lista de Tarefas do Objeto:");
+  console.table(tarefasPendentes.getMostrar());
 
   const novoItem = document.createElement('li'); // É criado um novo item na lista de Tarefas Pendentes do HTML do site. 
   novoItem.id = obj.getNome(); // Aqui o item recebe como identificador o próprio nome, para facilitar sua busca.
