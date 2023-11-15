@@ -19,10 +19,6 @@ class Lista {
         }
     }
 
-    /* setConcluido(elemento){
-        this._listaItens.push(elemento);
-    } */
-
     getMostrar(){
         return this._listaItens;
     }
