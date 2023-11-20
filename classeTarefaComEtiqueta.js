@@ -1,4 +1,4 @@
-import tarefa from "./classeTarefa.js";
+const tarefa = require("./classeTarefa.js");
 
 class tarefasComEtiqueta extends tarefa {
   constructor(){
@@ -13,16 +13,12 @@ class tarefasComEtiqueta extends tarefa {
 
   setInformation(nome, descricao, etiqueta){
     super.setInformation(nome, descricao);
-    this._etiqueta = etiqueta;
+    this._etiqueta = '#' + etiqueta;
   }
 
   getInformation(){
-    return `<strong>Tipo da Tarefa:</strong> Tarefa com Etiqueta. <br/>  <strong>Tarefa:</strong> ${this._nome.toUpperCase()}. <strong>Etiqueta:</strong> ${this._etiqueta}. <br/> <strong>Descrição:</strong> ${this._descricao}`;
+    return `\nTipo da Tarefa: Tarefa com Etiqueta. \nTarefa: ${this._nome.toUpperCase()}. Etiqueta: ${this._etiqueta}. \nDescrição: ${this._descricao}`;
   }
-
-  getConcluida(){
-    return `A tarefa <strong>${this._nome.toUpperCase()}</strong> foi concluida em <strong>${document.getElementById('dataConclusao').value}</strong>. <br /> <strong>${this._etiqueta}</strong>`;
-}
 }
 
-export default tarefasComEtiqueta;
+module.exports = tarefasComEtiqueta;

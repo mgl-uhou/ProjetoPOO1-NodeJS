@@ -1,4 +1,4 @@
-import tarefa from "./classeTarefa.js";
+const tarefa = require("./classeTarefa.js");
 
 class tarefaRepetitiva extends tarefa{
   constructor(){
@@ -20,9 +20,9 @@ class tarefaRepetitiva extends tarefa{
   }
 
   getInformation(){
-    return `<strong>Tipo da Tarefa:</strong> Tarefa Repetitiva. <br/> <strong>Tarefa:</strong> ${this._nome.toUpperCase()}. <strong>Frequência:</strong> ${this._frequencia}. <strong>Data de Início:</strong> ${this._dataInicio}. <br /> <strong>Descrição:</strong> ${this._descricao}`; // Aqui as informações que aparecerão no site são organizadas.
+    return `\nTipo da Tarefa: Tarefa Repetitiva.  \nTarefa: ${this._nome.toUpperCase()}. Frequência: ${this._frequencia}. Data de Início: ${this._dataInicio}.  \nDescrição: ${this._descricao}`; // Aqui as informações que aparecerão no site são organizadas.
   }
 
 }
 
-export default tarefaRepetitiva;
+module.exports = tarefaRepetitiva;

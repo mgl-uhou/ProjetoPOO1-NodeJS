@@ -1,4 +1,4 @@
-import tarefa from "./classeTarefa.js";
+const tarefa = require("./classeTarefa.js");
 
 class tarefasPrioridade extends tarefa {
   constructor(){
@@ -20,8 +20,8 @@ class tarefasPrioridade extends tarefa {
   }
 
   getInformation(){
-    return `<strong>Tipo da Tarefa:</strong> Tarefa Prioritária. <br/> <strong>Tarefa:</strong> ${this._nome}. <strong>Prioridade:</strong> ${this._prioridade}. <strong>Data Limite:</strong> ${this._dataLimite} <br /> <strong>Descrição:</strong> ${this._descricao}`; // Aqui as informações que aparecerão no site são organizadas.
+    return `\nTipo da Tarefa: Tarefa Prioritária. \nTarefa: ${this._nome}. Prioridade: ${this._prioridade}. Data Limite: ${this._dataLimite} \nDescrição: ${this._descricao}`; // Aqui as informações que aparecerão no site são organizadas.
   }
 }
 
-export default tarefasPrioridade;
+module.exports = tarefasPrioridade;

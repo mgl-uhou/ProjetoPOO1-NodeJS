@@ -1,107 +1,39 @@
-import { tarefasPendentes } from "./classeLista.js";
+const { tarefasPendentes } = require("./classeLista.js");
 
-const editar = (objeto, x, i) => {
-  const novoItem = document.createElement('li'); // É criado um novo item na lista de Tarefas Pendentes do HTML do site. 
-  novoItem.id = x // Aqui o item recebe como identificador o próprio nome, para facilitar sua busca.
-  
-  novoItem.innerHTML = tarefasPendentes.getMostrar()[i].getInformation();
-
-  // Encontrando o elemento <li> correspondente ao nome da tarefa
-  const elementoParaEditar = document.getElementById(x); //Referenciando o elemento que será editado
-  //if (elementoParaEditar) /* A condição testa se o elemento existe no código.*/ {
-  elementoParaEditar.innerHTML = novoItem.innerHTML; // Editando o elemento.
-  //}
-}
-
-const editarTarefaComum = () => { // Arrow Function que edita a tarefa escolhida
-    const x = document.getElementById('editarNome').value.toUpperCase(); // Refenrenciando a tarefa que será editada.
-  
+const editarTarefaComum = (nome, descricao) => { // Arrow Function que edita a tarefa escolhida
     for(let i = 0; i < tarefasPendentes.getMostrar().length; i++) /** Procura o elemento que será editado  */ {
-      if(tarefasPendentes.getMostrar()[i].getNome() == x) /** SE o elemento for encontrado, será editado */{
-  
-        tarefasPendentes.getMostrar()[i].setAlterar(document.getElementById('editarDescricao').value); // Chama o setter que altera o valor das propriedades da tarefa.
-
-        editar(tarefasPendentes.getMostrar()[i], x, i);
-  
-        /* const novoItem = document.createElement('li'); // É criado um novo item na lista de Tarefas Pendentes do HTML do site. 
-        novoItem.id = x // Aqui o item recebe como identificador o próprio nome, para facilitar sua busca.
-  
-        novoItem.innerHTML = tarefasPendentes.getMostrar()[i].getInformation();
-  
-        // Encontrando o elemento <li> correspondente ao nome da tarefa
-        const elementoParaEditar = document.getElementById(x); //Referenciando o elemento que será editado
-        //if (elementoParaEditar) /* A condição testa se o elemento existe no código. {
-        elementoParaEditar.innerHTML = novoItem.innerHTML; // Editando o elemento.
-        //}  */
-      } else  
-        console.log(`Elemento com ID "${x}" não encontrado.`); // Informando caso o elemento que devia ser editado não existe.
+      if(tarefasPendentes.getMostrar()[i].getNome() == nome) /** SE o elemento for encontrado, será editado */
+        tarefasPendentes.getMostrar()[i].setAlterar(descricao); // Chama o setter que altera o valor das propriedades da tarefa.
+      else  
+        return false; 
     }
-
-    // As duas linhas abaixo limpam o campo de input e o textarea
-    document.getElementById('editarNome').value = '';
-    document.getElementById('editarDescricao').value = '';
 }
 
-const editarTarefaComEtiqueta = () => { // Arrow Function que edita a tarefa escolhida
-  const x = document.getElementById('nomeEditarTarefaComEtiqueta').value.toUpperCase(); // Refenrenciando a tarefa que será editada.
-
+const editarTarefaComEtiqueta = (nome, descricao, etiqueta) => { // Arrow Function que edita a tarefa escolhida
   for(let i = 0; i < tarefasPendentes.getMostrar().length; i++) /** Procura o elemento que será editado  */ {
-    if(tarefasPendentes.getMostrar()[i].getNome() == x) /** SE o elemento for encontrado, será editado */{
-
-      tarefasPendentes.getMostrar()[i].setAlterar(document.getElementById('descricaoEditarTarefaComEtiqueta').value, document.getElementById("novaEtiqueta").value); // Chama o setter que altera o valor das propriedades da tarefa.
-
-      editar(tarefasPendentes.getMostrar()[i], x, i);
-
-    } else  
-      console.log(`Elemento com ID "${x}" não encontrado.`); // Informando caso o elemento que devia ser editado não existe.
+    if(tarefasPendentes.getMostrar()[i].getNome() == nome) /** SE o elemento for encontrado, será editado */
+      tarefasPendentes.getMostrar()[i].setAlterar(descricao, etiqueta); // Chama o setter que altera o valor das propriedades da tarefa.
+    else  
+      return false; 
   }
-
-  // As duas linhas abaixo limpam o campo de input e o textarea
-  document.getElementById('nomeEditarTarefaComEtiqueta').value = '';
-  document.getElementById('descricaoEditarTarefaComEtiqueta').value = '';
-  document.getElementById('novaEtiqueta').value = '#';
 } 
 
-const editarTarefaPrioritaria = () => { // Arrow Function que edita a tarefa escolhida
-  const x = document.getElementById('nomeEditarTarefaPrioritaria').value.toUpperCase(); // Refenrenciando a tarefa que será editada.
-
+const editarTarefaPrioritaria = (nome, descricao, prioridade, dataLimite) => { // Arrow Function que edita a tarefa escolhida
   for(let i = 0; i < tarefasPendentes.getMostrar().length; i++) /** Procura o elemento que será editado  */ {
-    if(tarefasPendentes.getMostrar()[i].getNome() == x) /** SE o elemento for encontrado, será editado */{
-
-      tarefasPendentes.getMostrar()[i].setAlterar(document.getElementById('descricaoEditarTarefaPrioritaria').value, document.getElementById("novaPrioridade").value, document.getElementById('novaDataLimite').value); // Chama o setter que altera o valor das propriedades da tarefa.
-
-      editar(tarefasPendentes.getMostrar()[i], x, i);
-
-    } else  
-      console.log(`Elemento com ID "${x}" não encontrado.`); // Informando caso o elemento que devia ser editado não existe.
+    if(tarefasPendentes.getMostrar()[i].getNome() == nome) /** SE o elemento for encontrado, será editado */
+      tarefasPendentes.getMostrar()[i].setAlterar(descricao, prioridade, dataLimite); // Chama o setter que altera o valor das propriedades da tarefa.
+    else  
+      return false; 
   }
-
-  // As duas linhas abaixo limpam o campo de input e o textarea
-  document.getElementById('nomeEditarTarefaPrioritaria').value = '';
-  document.getElementById('descricaoEditarTarefaPrioritaria').value = '';
-  document.getElementById('novaPrioridade').value = '';
-  document.getElementById('novaDataLimite').value = '';
 }
 
-const editarTarefaRepetitiva = () => { // Arrow Function que edita a tarefa escolhida
-  const x = document.getElementById('nomeEditarTarefaRepetitiva').value.toUpperCase(); // Refenrenciando a tarefa que será editada.
-
+const editarTarefaRepetitiva = (nome, descricao, frequencia, dataInicio) => { // Arrow Function que edita a tarefa escolhida
   for(let i = 0; i < tarefasPendentes.getMostrar().length; i++) /** Procura o elemento que será editado  */ {
-    if(tarefasPendentes.getMostrar()[i].getNome() == x) /** SE o elemento for encontrado, será editado */{
-
-      tarefasPendentes.getMostrar()[i].setAlterar(document.getElementById('descricaoEditarTarefaRepetitiva').value, document.getElementById("novaFrequencia").value, document.getElementById('novaDataInicio').value); // Chama o setter que altera o valor das propriedades da tarefa.
-
-      editar(tarefasPendentes.getMostrar()[i], x, i);
-
-    } else  
-      console.log(`Elemento com ID "${x}" não encontrado.`); // Informando caso o elemento que devia ser editado não existe.
+    if(tarefasPendentes.getMostrar()[i].getNome() == nome) /** SE o elemento for encontrado, será editado */
+      tarefasPendentes.getMostrar()[i].setAlterar(descricao, frequencia, dataInicio); // Chama o setter que altera o valor das propriedades da tarefa.
+    else  
+      return false; 
   }
-
-  // As duas linhas abaixo limpam o campo de input e o textarea
-  document.getElementById('nomeEditarTarefaRepetitiva').value = '';
-  document.getElementById('descricaoEditarTarefaRepetitiva').value = '';
-  document.getElementById('novaFrequencia').value = '';
-  document.getElementById('novaDataInicio').value = '';
 }
 
-export { editarTarefaComum, editarTarefaComEtiqueta, editarTarefaPrioritaria, editarTarefaRepetitiva };
+module.exports = { editarTarefaComum, editarTarefaComEtiqueta, editarTarefaPrioritaria, editarTarefaRepetitiva };

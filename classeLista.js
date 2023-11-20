@@ -12,7 +12,7 @@ class Lista {
     setRemoverDaLista(elemento){
         let i = 0
         for(let indice of this._listaItens){
-            if( indice.getNome() == elemento ){
+            if( indice.getNome().toLowerCase() == elemento ){
                 this._listaItens.splice(i, 1);
             }else
                 i++
@@ -27,4 +27,4 @@ class Lista {
 let tarefasPendentes = new Lista();
 let tarefasConcluidas = new Lista();
 
-export { tarefasPendentes, tarefasConcluidas };
+module.exports =  { tarefasPendentes, tarefasConcluidas };

@@ -14,16 +14,12 @@ class tarefa{ // Aqui a classe que tem as propriedades dos objetos e o método �
     }
 
     getInformation(){
-        return `<strong>Tipo da Tarefa:</strong> Tarefa Comum. <br/> <strong>Tarefa:</strong> ${this._nome.toUpperCase()}. <br /> <strong>Descrição:</strong> ${this._descricao}`; // Aqui as informações que aparecerão no site são organizadas.
+        return `\nTipo da Tarefa: Tarefa Comum. \nTarefa: ${this._nome.toUpperCase()}. \nDescrição: ${this._descricao}`; // Aqui as informações que aparecerão no site são organizadas.
     }
 
     getNome(){
         return this._nome;
     }
-
-    getConcluida(){
-        return `A tarefa <strong>${this._nome.toUpperCase()}</strong> foi concluída em <strong>${document.getElementById('dataConclusao').value}</strong>.`;
-    }
 }
 
-export default tarefa;
+module.exports = tarefa;
